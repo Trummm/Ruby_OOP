@@ -5,9 +5,9 @@ module Util
   end
   
   def export_inf_to_file(url)
-    your_file = File.new(url, "w+")
-    your_file.close
-    export = File.open(url, "w+")
+    your_file = File.new(url, 'w+')
+    # your_file.close
+    # export = File.open(url, "w+")
 
     export.puts("ten san pham: #{name}")
     export.puts("so seri: #{seri}")
@@ -15,10 +15,10 @@ module Util
     export.close
   end
 
-  def print_mess_to_file(mess, url)
-    export_mess = File.open(url, "a+")
+  def print_msg_to_file(msg, url)
+    export_msg = File.open(url, 'a+')
 
-    export_mess.puts("your mess is here --> \" #{mess} \" ")
+    export_msg.puts("your mess is here --> \" #{mess} \" ")
 
     export_mess.close
   end
@@ -26,8 +26,8 @@ end
 
 class FaxMachine 
   include Util
-
-  attr_accessor :name, :seri
+  
+  att_reader :name, :seri
 
   def initialize(name, seri)
     @name = name
